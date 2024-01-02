@@ -13,7 +13,7 @@ else
     exit 1
 fi
 
-for pkg in neofetch stow; do
+for pkg in neofetch stow docker; do
     if ! $PKG_QUERY "$pkg" &> /dev/null; then
         $PKG_MANAGER "$pkg"
     fi
