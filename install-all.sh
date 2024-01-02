@@ -1,2 +1,2 @@
-./yay.sh && \
-./zsh.sh
+.~/post-install-scripts/yay.sh && \
+.~/post-install-scripts/zsh.sh

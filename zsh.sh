@@ -2,7 +2,7 @@ echo '***** Installing Zsh, Oh-My-Zsh, and Starship *****'
 #Install zsh and change default shell
 sudo pacman -S --noconfirm zsh
 sudo chsh -s /usr/bin/zsh bebbis
-touch /home/bebbis/.zshrc
+touch ~/.zshrc
 
 # Install oh-my-zsh
 # No config should be necessary, we will clone dotfiles later
