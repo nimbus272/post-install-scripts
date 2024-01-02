@@ -13,7 +13,7 @@ fi
 
 #Install zsh and change default shell
 $PKG_MANAGER zsh
-chsh -s $(which zsh) (whoami)
+chsh -s $(which zsh) $(whoami)
 
 # Install oh-my-zsh
 # No config should be necessary, we will clone dotfiles later
