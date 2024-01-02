@@ -5,7 +5,7 @@ execute_script() {
 }
 
 # Initial setup
-if [-f "/etc/arch-release"]; then
+if [ -f "/etc/arch-release" ]; then
     echo "Arch Linux detected"
     execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/yay.sh"
 fi
