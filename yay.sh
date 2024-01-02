@@ -7,5 +7,5 @@ pacman -S --noconfirm --needed base-devel git
 
 git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay
-makepkg -si --noconfirm
+sudo -u bebbis makepkg -si --noconfirm
 cd ~
