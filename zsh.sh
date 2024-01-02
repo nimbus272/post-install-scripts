@@ -7,4 +7,4 @@ sudo chsh -s /usr/bin/zsh bebbis
 # No config should be necessary, we will clone dotfiles later
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 yay -S --noconfirm starship
-echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+rm -rf ~/.zshrc
