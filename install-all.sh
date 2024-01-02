@@ -1,8 +1,19 @@
 #Initial setup
-bash $HOME/post-install-scripts/yay.sh && \
-bash $HOME/post-install-scripts/zsh.sh
+execute_script() {
+    local script_url=$1
+    curl -s "$script_url" | sudo bash || { echo "Execution of $script_url failed"; exit 1; }
+}
 
-#Now that we have zsh
-zsh $HOME/post-install-scripts/extra-packages.sh && \
-zsh $HOME/post-install-scripts/get-dotfiles.sh
+# Initial setup
+if [-f "/etc/arch-release"]; then
+    echo "Arch Linux detected"
+    execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/yay.sh"
+fi
+
+execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/zsh.sh"
+
+# Now that we have zsh
+execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/extra-packages.sh"
+execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/get-dotfiles.sh"
+
 exec zsh
