@@ -1,7 +1,7 @@
 #setup pacman keys
-pacman -Sy --noconfirm archlinux-keyring
 pacman-key --init
 pacman-key --populate
+pacman -Sy --noconfirm archlinux-keyring
 
 #install reflector and get faster mirrors for pacman
 for pkg in reflector rsync; do
