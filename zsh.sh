@@ -18,7 +18,7 @@ chsh -s $(which zsh) $(whoami)
 # Install oh-my-zsh
 # No config should be necessary, we will clone dotfiles later
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-rm -rf ~/.zshrc
+rm -rf /home/bebbis/.zshrc
 
 # Install starship
 if [ -f "/etc/arch-release" ]; then

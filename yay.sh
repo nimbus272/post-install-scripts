@@ -4,8 +4,8 @@ pacman -Syu --noconfirm
 
 #install git and required base-devel tools (such as makepkg)
 pacman -S --noconfirm --needed base-devel git
-
-git clone https://aur.archlinux.org/yay.git ~/yay
-cd ~/yay
-sudo -u bebbis bash -c "makepkg -si --noconfirm"
-cd ~
+sudo -u bebbis bash -c '\
+    git clone https://aur.archlinux.org/yay.git ~/yay
+    cd ~/yay
+    makepkg -si --noconfirm
+'
