@@ -35,6 +35,6 @@ else
 fi
 
 # Install zplug
-sudo -u "$SCRIPT_USER" curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | bash
+sudo -u "$SCRIPT_USER" curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 chsh -s $(which zsh) "$SCRIPT_USER"
