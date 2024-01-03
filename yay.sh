@@ -1,6 +1,8 @@
 echo '***** Installing Yay *****'
 #refresh package cache and update system
-pacman -Syu --noconfirm
+if [ ! -f "/etc/arch-release" ]; then
+    pacman -Syu --noconfirm
+fi
 
 #install git and required base-devel tools (such as makepkg)
 pacman -S --noconfirm --needed base-devel git
