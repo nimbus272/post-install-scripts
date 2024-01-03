@@ -15,6 +15,6 @@ fi
 
 for pkg in neofetch stow docker; do
     if ! $PKG_QUERY "$pkg" &> /dev/null; then
-        sudo -u bebbis bash -c "$PKG_MANAGER \"$pkg\""
+        $PKG_MANAGER "$pkg"
     fi
 done

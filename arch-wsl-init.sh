@@ -1,3 +1,5 @@
+SCRIPT_USER=$(whoami)
+
 #setup pacman keys
 pacman-key --init
 pacman-key --populate
@@ -18,8 +20,13 @@ pacman -Syu --noconfirm
 #install git and clone post-install repo
 if ! command -v git &> /dev/null
 then
-    sudo pacman -S --noconfirm git
+    pacman -S --noconfirm git
 fi
-curl -s "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/install-all.sh" | sudo bash
+curl -s "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/install-all.sh" | sudo bash -- "$SCRIPT_USER"
 
+if ! command -v zsh &> /dev/null
+then
+    echo "zsh is not installed, cannot switch to zsh shell"
+    exit 1
+fi
 exec zsh
