@@ -1,8 +1,5 @@
 SCRIPT_USER=$1
 
-if [ -f "/etc/arch-release" ]; then
-    SCRIPT_USER=$(whoami)
-fi
 #Initial setup
 execute_script() {
     local script_url=$1
