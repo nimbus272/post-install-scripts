@@ -1,3 +1,4 @@
+SCRIPT_USER=$1
 # Determine the package manager
 if [ -f "/etc/arch-release" ]; then
     PKG_MANAGER="pacman -S --noconfirm"
@@ -13,6 +14,7 @@ else
     exit 1
 fi
 
+rm -rf /home/"$SCRIPT_USER"/.zshrc
 for pkg in neofetch stow docker wget; do
     if ! $PKG_QUERY "$pkg" &> /dev/null; then
         $PKG_MANAGER "$pkg"
