@@ -14,7 +14,6 @@ fi
 #Install zsh and change default shell
 sudo -u bebbis bash -c '\
     "$PKG_MANAGER zsh"
-    chsh -s $(which zsh) $(whoami)
     
     # Install oh-my-zsh
     # No config should be necessary, we will clone dotfiles later
@@ -35,4 +34,5 @@ sudo -u bebbis bash -c '\
     #install zplug
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | bash
 '
+chsh -s $(which zsh) bebbis
 
