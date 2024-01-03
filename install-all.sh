@@ -18,4 +18,5 @@ execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts
 execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/extra-packages.sh"
 execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/get-dotfiles.sh"
 
+rm -rf /home/"$SCRIPT_USER"/.zshrc
 exec zsh
