@@ -22,7 +22,7 @@ if ! command -v git &> /dev/null
 then
     pacman -S --noconfirm git
 fi
-curl -s "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/install-all.sh" | sudo bash -- "$SCRIPT_USER"
+curl -s "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/install-all.sh" | sudo bash -s -- "$SCRIPT_USER"
 
 if ! command -v zsh &> /dev/null
 then
