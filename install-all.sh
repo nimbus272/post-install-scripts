@@ -3,7 +3,7 @@ SCRIPT_USER=$1
 #Initial setup
 execute_script() {
     local script_url=$1
-    curl -s "$script_url" | sudo bash -- "$SCRIPT_USER"|| { echo "Execution of $script_url failed"; exit 1; }
+    curl -s "$script_url" | sudo bash -s -- "$SCRIPT_USER"|| { echo "Execution of $script_url failed"; exit 1; }
 }
 
 # Initial setup
