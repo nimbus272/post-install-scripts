@@ -1,4 +1,4 @@
-SCRIPT_USER=$(whoami)
+SCRIPT_USER=$1
 
 #setup pacman keys
 pacman-key --init
