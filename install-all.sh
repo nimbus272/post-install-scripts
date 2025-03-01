@@ -2,15 +2,14 @@ SCRIPT_USER=$1
 
 #Initial setup
 execute_script() {
-    local script_url=$1
-    curl -s "$script_url" | sudo bash -s -- "$SCRIPT_USER"|| { echo "Execution of $script_url failed"; exit 1; }
+	local script_url=$1
+	curl -s "$script_url" | sudo bash -s -- "$SCRIPT_USER" || {
+		echo "Execution of $script_url failed"
+		exit 1
+	}
 }
 
-# Initial setup
-if [ -f "/etc/arch-release" ]; then
-    echo "Arch Linux detected"
-    execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/yay.sh"
-fi
+execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/yay.sh"
 
 execute_script "https://raw.githubusercontent.com/nimbus272/post-install-scripts/main/zsh.sh"
 
